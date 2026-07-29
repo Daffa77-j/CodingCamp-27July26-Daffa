@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Dashboard</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ===== HEADER: Greeting & Clock ===== -->
+  <header class="header">
+    <div class="clock-wrapper">
+      <p id="current-time" class="time">00:00:00</p>
+      <p id="current-date" class="date">Monday, January 1, 2025</p>
+    </div>
+    <h1 id="greeting" class="greeting">Good Morning!</h1>
+  </header>
+
+  <!-- ===== MAIN CONTENT ===== -->
+  <main class="dashboard">
+
+    <!-- Focus Timer -->
+    <section class="card" id="timer-section">
+      <h2 class="card-title">Focus Timer</h2>
+      <div class="timer-display" id="timer-display">25:00</div>
+      <div class="timer-controls">
+        <button class="btn btn-primary" id="btn-start">Start</button>
+        <button class="btn btn-secondary" id="btn-stop">Stop</button>
+        <button class="btn btn-ghost" id="btn-reset">Reset</button>
+      </div>
+      <p class="timer-label" id="timer-label">Ready to focus?</p>
+    </section>
+
+    <!-- To-Do List -->
+    <section class="card" id="todo-section">
+      <h2 class="card-title">To-Do List</h2>
+
+      <div class="todo-input-row">
+        <input
+          type="text"
+          id="todo-input"
+          class="input-field"
+          placeholder="Add a new task..."
+          maxlength="100"
+        />
+        <button class="btn btn-primary" id="btn-add-todo">Add</button>
+      </div>
+
+      <ul class="todo-list" id="todo-list">
+        <!-- Tasks injected by JS -->
+      </ul>
+
+      <p class="todo-empty" id="todo-empty">No tasks yet. Add one above!</p>
+    </section>
+
+    <!-- Quick Links -->
+    <section class="card" id="links-section">
+      <h2 class="card-title">Quick Links</h2>
+
+      <div class="links-input-row">
+        <input
+          type="text"
+          id="link-name-input"
+          class="input-field"
+          placeholder="Label (e.g. GitHub)"
+          maxlength="30"
+        />
+        <input
+          type="url"
+          id="link-url-input"
+          class="input-field"
+          placeholder="URL (e.g. https://github.com)"
+        />
+        <button class="btn btn-primary" id="btn-add-link">Add</button>
+      </div>
+
+      <div class="links-grid" id="links-grid">
+        <!-- Link buttons injected by JS -->
+      </div>
+
+      <p class="todo-empty" id="links-empty">No links yet. Add one above!</p>
+    </section>
+
+  </main>
+
+  <!-- ===== EDIT TASK MODAL ===== -->
+  <div class="modal-overlay" id="modal-overlay" aria-hidden="true">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <h3 id="modal-title">Edit Task</h3>
+      <input
+        type="text"
+        id="modal-input"
+        class="input-field"
+        maxlength="100"
+        placeholder="Task name..."
+      />
+      <div class="modal-actions">
+        <button class="btn btn-primary" id="btn-modal-save">Save</button>
+        <button class="btn btn-ghost" id="btn-modal-cancel">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
